@@ -15,7 +15,7 @@ export default function App() {
   const handleSetTab = (next: 'schedule' | 'speakers') => {
     if (next === tab) return;
     setIsLoading(true);
-    // Simulate a short loading period. Replace this with your real async fetch logic.
+    // Simulate a short loading period
     setTimeout(() => {
       setTab(next);
       setIsLoading(false);
@@ -23,7 +23,7 @@ export default function App() {
   };
 
   return (
-    <View className="flex-1 bg-white ios:pt-0 pt-8">
+    <View className="flex-1 bg-white ios:pt-0 pt-9">
       <View className="flex-row items-center border-b border-gray-200 bg-[#e97b35] px-4 pb-2 ios:pt-16 pt-4">
         <Image
           source={require('./assets/piw-logo.png')}
@@ -94,6 +94,6 @@ const TabItem = ({
 }) => (
   <TouchableOpacity onPress={onPress} className="items-center gap-1 px-3 py-1" accessibilityRole="button">
     {icon(active)}
-    <Text className={`${active ? '#fff' : '#000'} text-xs font-medium`}>{label}</Text>
+    <Text className={`${active ? 'text-white' : 'text-black'} text-xs font-medium`}>{label}</Text>
   </TouchableOpacity>
 );
